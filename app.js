@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/sentiment_tweet';
+var mongoDB = 'mongodb://127.0.0.1/tweet';
 mongoose.connect(mongoDB, {
     useNewUrlParser : true,
 });

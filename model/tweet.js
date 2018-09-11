@@ -6,19 +6,19 @@ var schema = mongoose.Schema({
         required : true
     },
     retweet_count : {
-        type: int,
+        type: Number,
         required: true
     },
     favourites_count : {
-        type : int,
+        type : Number,
         required : true
     },
     followers_count : {
-        type : int,
+        type : Number,
         required : true
     },
     friends_count : {
-        type : int,
+        type : Number,
         required : true
     },
     lang : {
@@ -38,7 +38,7 @@ var schema = mongoose.Schema({
         required : true
     },
     neutral_value: {
-        type : double,
+        type : Number,
         required : true
     },
     neg_value: {

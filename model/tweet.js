@@ -32,10 +32,26 @@ var schema = mongoose.Schema({
     created_at : {
         type : String,
         required : true
-    }
+    },
+    sentiment : {
+        type : String,
+        required : true
+    },
+    neutral_value: {
+        type : double,
+        required : true
+    },
+    neg_value: {
+        type : String,
+        required : true
+    },
+    pos_value: {
+        type : String,
+        required : true
+    },
 });
 
-var Schema = module.exports = mongoose.model('tweet', schema);
+var Schema = module.exports = mongoose.model('test2', schema);
 
 module.exports.getSchema = function(callback) {
     Schema.find(callback);

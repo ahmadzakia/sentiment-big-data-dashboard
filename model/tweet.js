@@ -42,11 +42,11 @@ var schema = mongoose.Schema({
         required : true
     },
     neg_value: {
-        type : String,
+        type : Number,
         required : true
     },
     pos_value: {
-        type : String,
+        type : Number,
         required : true
     },
 });

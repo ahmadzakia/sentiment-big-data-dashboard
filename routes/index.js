@@ -5,6 +5,7 @@ var SchemaPos = require('../model/pos_tweets.js');
 var SchemaNeg = require('../model/neg_tweets.js');
 var SchemaNeu = require('../model/neu_tweets.js');
 var SchemaStatus = require('../model/status.js');
+var SchemaTopTen = require('../model/topten.js');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -15,6 +16,18 @@ router.get('/status', function(req, res){
 
     SchemaStatus.getSchema(function (err, data) {
         if (err) return res.status(500).send(err);
+        res.send(data);
+    });
+
+});
+
+router.get('/topten', function(req, res){
+
+    SchemaTopTen.getSchema(function (err, data) {
+        if (err){
+            console.log(err)
+            return res.status(500).send(err);
+        }
         res.send(data);
     });
 

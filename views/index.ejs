@@ -17,18 +17,22 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato: 100,300,400,700|Luckiest+Guy|Oxygen:300,400" rel="stylesheet">
 </head>
-<body ng-app>
+<body ng-app="myApp" id="body_element" ng-controller="controller1">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
             <h2>Twitter Analysis About Gun Laws in America</h2>
         </div>
-        <div class="col-md-4" style="size: 25px">
+        <div class="col-md-12 card" style="size: 25px;margin: 10px;padding: 20px;">
             <p>Show Public Opinion About Gun Laws in America.</p>
             <ol>
                 <li>Positif,Negative and Netral Sentiments.</li>
                 <li>Virality</li>
                 <li>Peak Time Trending from Tweets.</li>
             </ol>
+            <ul >
+                <!--<li id="counter_pos">{{toptens}}</li>-->
+            </ul>
+            <div id="test_scope"></div>
         </div>
     </div>
     <div class="row">
@@ -39,6 +43,31 @@
                     <h3></h3>
                     <div id="sentiment_count"></div>
                 </div>
+
+                <script type="text/javascript">
+                    // Load google charts
+                    var i;
+
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    <!-- pie chart 1-->
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Kind', 'Number of Tweets'],
+                            ['Positive', count_sentiment_pos],
+                            ['Negative', count_sentiment_neg],
+                            ['Netral', count_sentiment_neu]
+                        ]);
+
+                        // Optional; add a title and set the width and height of the chart
+                        var options = {'title':'', 'width':700, 'height':500};
+
+                        // Display the chart inside the <div> element with id="piechart"
+                        var chart = new google.visualization.PieChart(document.getElementById('sentiment_count'));
+                        chart.draw(data, options);
+                    }
+                </script>
             </div>
             <div class="col-md-6">
                 <div id="tweets_wrap" class="card" style="padding: 20px">
@@ -55,73 +84,59 @@
                             <th>Follower</th>
                             <th>Retweet</th>
                         </tr>
-                        <tr>
-                            <td>ahmadzakia</td>
-                            <td>123332</td>
-                            <td>12000</td>
-                        </tr>
-                        <tr>
-                            <td>ahmadzakia2</td>
-                            <td>123312</td>
-                            <td>11000</td>
+                        <tr ng-repeat="x in toptens">
+                            <td>{{ x.username }}</td>
+                            <td>{{ x.followers_count }}</td>
+                            <td>{{ x.text }}</td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <!--<div class="col-md-6" style="margin-top: 20px  ">-->
-                <!--<div id="tweets_wrap" class="card">-->
-                    <!--<div class="card-title" style="padding: 10px;"><h3>Undefined</h3></div>-->
-                    <!--<div id="donutchart" style="width: 700px; height: 500px;"></div>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="col-md-6" style="margin-top: 20px  ">
+                <div class="card">
+                    <div class="card-title" style="padding: 10px;"><h3>Conclusion</h3></div>
+                    <div class="" style="font-size: 12px">
+                        <ol>
+                            <li>Based on sentiment composition, most of twitter users has neutral sentiments. We assume several condition:
+                                <ul>
+                                    <li>Majority of people still has no standing to this issue</li>
+                                    <li>Majority of people do not understrand what happen about this issue</li>
+                                </ul>
+                            </li>
+                            <li>Copmaring to positive or negative sentiments, people tend to angry, declined, or againts about this issue</li>
+                            <li>Information Spread has reach up to 80M people in twitter land within 2 days (10-12 September 2018)</li>
+                            <li>Some account that has power in twitter, have neutral sentiment about this issue due to majority of them are News Account</li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 </body>
 
-<script type="text/javascript">
-    // Load google charts
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    <!-- pie chart 1-->
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Kind', 'Number of Tweets'],
-            ['Positive', 8],
-            ['Negative', 2],
-            ['Netral', 4]
-        ]);
-
-        // Optional; add a title and set the width and height of the chart
-        var options = {'title':'', 'width':700, 'height':500};
-
-        // Display the chart inside the <div> element with id="piechart"
-        var chart = new google.visualization.PieChart(document.getElementById('sentiment_count'));
-        chart.draw(data, options);
-    }
-</script>
 <!-- piechart 3-->
 <script type="text/javascript">
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Amount'],
-            ['Relaxed',     11],
-            ['Happy',      2],
-            ['Unhappy',  2],
-            ['Upset', 2]
-        ]);
-
-        var options = {
-            title: '',
-            pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-    }
+    // google.charts.load("current", {packages:["corechart"]});
+    // google.charts.setOnLoadCallback(drawChart);
+    // function drawChart() {
+    //     var data = google.visualization.arrayToDataTable([
+    //         ['Task', 'Amount'],
+    //         ['Relaxed',     11],
+    //         ['Happy',      2],
+    //         ['Unhappy',  2],
+    //         ['Upset', 2]
+    //     ]);
+    //
+    //     var options = {
+    //         title: '',
+    //         pieHole: 0.4,
+    //     };
+    //
+    //     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    //     chart.draw(data, options);
+    // }
 </script>
 <!--piechart 2-->
 <script type="text/javascript">
@@ -130,9 +145,8 @@
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Task', 'Positive', 'Negative', 'Netral'],
-            ['Tweet', 11700, 4600, 2500]
-
+            ['', 'Positive', 'Negative', 'Netral'],
+            ['Spreading', count_spreading_pos, count_spreading_neg, count_spreading_neu]
         ]);
 
         var options = {

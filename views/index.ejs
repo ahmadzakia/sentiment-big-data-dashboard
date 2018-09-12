@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <title><%= title %></title>
-      <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+
+    <!-- piechart 3-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Amount'],
+                ['Relaxed',     11],
+                ['Happy',      2],
+                ['Unhappy',  2],
+                ['Upset', 2]
+            ]);
+
+            var options = {
+                title: 'Data',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+    <!--piechart 2-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Positive', 'Negative', 'Netral'],
+                ['Retweet', 1000, 400, 200],
+                ['Tweet', 11700, 4600, 2500]
+
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Data',
+
+                },
+                bars: 'horizontal' // Required for Material Bar Charts.
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>Twitter Analysis for Gun Laws</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato: 100,300,400,700|Luckiest+Guy|Oxygen:300,400" rel="stylesheet">
+    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet">
+</head>
+
+
+<body>
+<div id="goal">
+    <h1>Twitter Analysis About Gun Laws in America</h1>
+    <h2>Goal</h2>
+    <p>Show Public Opinion About Gun Laws in America.</p>
+    <ol>
+        <li>Positif,Negative and Netral Sentiments.</li>
+        <li>Virality</li>
+        <li>Peak Time Trending from Tweets.</li>
+
+    </ol>
+</div>
+
+<div id="results">
+    <h2>Results</h2>
+
+    <div id="movies_wrap">
+        <h3>A. Sentiments</h3>
+        <div id="piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            <!-- pie chart 1-->
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Kind', 'Number of Tweets'],
+                    ['Positive', 8],
+                    ['Negative', 2],
+                    ['Netral', 4]
+                ]);
+
+                // Optional; add a title and set the width and height of the chart
+                var options = {'title':'Data', 'width':900, 'height':500};
+
+                // Display the chart inside the <div> element with id="piechart"
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+        </script>
+
+    </div>
+
+    <div id="tweets_wrap">
+        <h3>B. Virality</h3>
+        <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    </div>
+    <div id="tweets_wrap">
+        <h3>C. Trending</h3>
+        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    </div>
+    <div id="tweets_wrap">
+        <h3></h3>
+
+    </div>
+</div>
+</div>
+
+
+<div id="container"></div>
+<footer>End</footer>
+</body>
 </html>
+

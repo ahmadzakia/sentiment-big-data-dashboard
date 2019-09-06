@@ -3,6 +3,11 @@
 This project is part of class project in Big Data class - Ajou University. 
 We retrieve data from twitter using Twitter API and analyze it to get the sentiment of the tweet related with specific subject. The function of this project is to show the result of the analytics. 
 
+## Screenshoot
+
+![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS1.png)
+![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS2.png)
+
 ## Getting Started
 
 The process will be shown below. 

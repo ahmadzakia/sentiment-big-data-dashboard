@@ -1,70 +1,56 @@
 # Sentiment Analysis - Big Data
 
-This project is part of class project in Big Data class - Ajou University. We retrieve data from twitter and using Twitter API and analyze it to get the sentiment of the tweet related with specific subject.
+This project is part of class project in Big Data class - Ajou University. 
+We retrieve data from twitter using Twitter API and analyze it to get the sentiment of the tweet related with specific subject. The function of this project is to show the result of the analytics. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The process will be shown below. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* git - [Installation guide](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/).
+* node.js - [Download page](https://nodejs.org/en/download/).
+* npm - comes with node or download yarn - [Download page](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
+* mongodb - [Download page](https://www.mongodb.com/download-center/community).
+* jetbrains webstorm [Download page](https://www.jetbrains.com/webstorm/).
 
+Example in Package Manager
 ```
-Give examples
+pkg install nodejs
+```
+Example in Homebrew
+```
+brew install node
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+1. git clone project
 ```
-Give the example
+git clone https://github.com/ahmadzakia/sentiment_bigdata.git
+cd sentiment_bigdata
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+2. open project using Jetbrains Webstorm
+3. Run project from Jetbrains
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+No Automated test
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+* This project deployed in local computer
+* This project is accessed in Local Area Network in class
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [MEAN](http://http://meanjs.org/) - The web framework used
+* [MongoDB](https://www.mongodb.com/) - Database
+* [ExpressJs](https://expressjs.com/) - NodeJs Framework 
+* [AngularJs](https://angularjs.org/) - Frontend
+* [NodeJs](https://nodejs.org/en/) 
+* [jetbrains webstorm](https://www.jetbrains.com/webstorm/) - Editor
 
 ## Versioning
 
@@ -72,16 +58,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Ahmad Zaki Anshori** - *Initial work* - [ahmadzakia](https://github.com/ahmadzakia)
+* **Gilang Ramadhan** - [gilangr](https://github.com/gilangr)
+* **Adhitya W** - [AdhityaD](https://github.com/https://github.com/AdhityaD)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under MIT. Documentation licensed under CC BY 3.0. Copyright 2014.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Big Data Class Project
+* Education purposes

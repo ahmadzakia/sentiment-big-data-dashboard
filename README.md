@@ -5,7 +5,10 @@ We retrieve data from twitter using Twitter API and analyze it to get the sentim
 
 ## Screenshoot
 
+* Screenshoot 1 
 ![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS1.png)
+
+* Screenshoot 2
 ![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS2.png)
 
 ## Getting Started

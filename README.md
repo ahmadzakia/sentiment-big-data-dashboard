@@ -68,7 +68,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Ahmad Zaki Anshori** - *Initial work* - [ahmadzakia](https://github.com/ahmadzakia)
 * **Gilang Ramadhan** - [gilangr](https://github.com/gilangr)
-* **Adhitya W** - [AdhityaD](https://github.com/https://github.com/AdhityaD)
+* **Adhitya W** - [AdhityaD](https://github.com/AdhityaD)
 
 ## License
 

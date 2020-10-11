@@ -12,6 +12,7 @@ mongoose.connect(mongoDB, {
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, "Mongo DB connection Error"));
+db.on('connected', console.log.bind(console, "Mongo DB connection Success"));
 
 
 
@@ -19,7 +20,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

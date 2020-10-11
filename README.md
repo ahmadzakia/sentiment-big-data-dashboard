@@ -6,10 +6,10 @@ We retrieve data from twitter using Twitter API and analyze it to get the sentim
 ## Screenshoot
 
 * Screenshoot 1 
-![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS1.png)
+![SS1](screenshoot/SS1.png)
 
 * Screenshoot 2
-![SS1](https://github.com/ahmadzakia/sentiment_bigdata/blob/master/screenshoot/SS2.png)
+![SS1](screenshoot/SS2.png)
 
 ## Getting Started
 
@@ -34,13 +34,19 @@ brew install node
 
 ### Installing
 
-1. git clone project
-```
+* git clone project
+```bash
 git clone https://github.com/ahmadzakia/sentiment_bigdata.git
 cd sentiment_bigdata
 ```
-2. open project using Jetbrains Webstorm
-3. Run project from Jetbrains
+* Install dependencies
+```bash
+npm install
+```
+* Run project
+```bash
+npm start 
+```
 
 ## Running the tests
 
